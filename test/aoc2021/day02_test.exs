@@ -10,11 +10,11 @@ defmodule Aoc2021.Day02Test do
     |> String.split("\r\n", trim: true)
 
   describe "part one" do
-    #assert Day02.part_one(@input) == 1670340
+    assert Day02.part_one(@input) == 1670340
   end
 
   describe "part two" do
-    IO.inspect Day02.part_two(@input)
+    assert Day02.part_two(@input) == 1954293920
   end
 
 end
