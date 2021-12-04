@@ -37,7 +37,7 @@ defmodule Aoc2021.Day03 do
     acc
       |> Enum.join()
       |> String.to_integer(2)
-  end  
+  end
 
   def part_one (input) do
     diagnostics = input
