@@ -88,7 +88,7 @@ defmodule Aoc2021.Day04 do
   end
 
   # --------------------------------------------------
-  # Part One
+  # Part Two
   # --------------------------------------------------
 
   def search_last_winner(boards, [curr | pool], history, scores) do
