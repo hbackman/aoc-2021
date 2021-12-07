@@ -14,7 +14,7 @@ defmodule Aoc2021.Day05Test do
   end
 
   describe "part two" do
-    assert IO.inspect Day05.part_two(@input) == 18674
+    assert Day05.part_two(@input) == 18674
   end
 
 end
