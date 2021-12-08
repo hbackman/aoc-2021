@@ -13,9 +13,9 @@ defmodule Aoc2021.Day06Test do
   describe "part one" do
     assert Day06.part_one(@input) == 380243
   end
-  
+
   describe "part two" do
-    assert Day06.part_two(@input) == :ok
+    assert Day06.part_two(@input) == 1708791884591
   end
 
 end

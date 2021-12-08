@@ -1,39 +1,52 @@
 defmodule Aoc2021.Day06 do
 
+  defp init(fish) do
+    [
+      fish |> Enum.filter(fn age -> age == 0 end) |> Enum.count(),
+      fish |> Enum.filter(fn age -> age == 1 end) |> Enum.count(),
+      fish |> Enum.filter(fn age -> age == 2 end) |> Enum.count(),
+      fish |> Enum.filter(fn age -> age == 3 end) |> Enum.count(),
+      fish |> Enum.filter(fn age -> age == 4 end) |> Enum.count(),
+      fish |> Enum.filter(fn age -> age == 5 end) |> Enum.count(),
+      fish |> Enum.filter(fn age -> age == 6 end) |> Enum.count(),
+      fish |> Enum.filter(fn age -> age == 7 end) |> Enum.count(),
+      fish |> Enum.filter(fn age -> age == 8 end) |> Enum.count(),
+    ]
+  end
+
+  defp age(fish) do
+    [f0, f1, f2, f3, f4, f5, f6,      f7, f8] = fish
+    [f1, f2, f3, f4, f5, f6, f7 + f0, f8, f0]
+  end
+
+  defp tick(fish, days) when days > 0 do
+    tick(age(fish), days-1)
+  end
+
+  defp tick(fish, days) when days <= 0 do
+    fish
+  end
+
   # --------------------------------------------------
   # Part One
   # --------------------------------------------------
 
-  def tick(fish, days) when days > 0 do
-    c = fish
-      |> Enum.filter(fn a -> 0 == a end)
-      |> Enum.map(fn _ -> 8 end)
-
-    p = Enum.map(fish, fn a
-      -> cond do
-        a >= 1 -> a - 1
-        a == 0 -> a + 6
-      end
-    end)
-
-    tick(p ++ c, days - 1)
-  end
-
-  def tick(fish, days) when days <= 0 do
-    fish
-  end
-
   def part_one (input) do
-    tick(input, 80)
-      |> Enum.count()
+    input
+      |> init()
+      |> tick(80)
+      |> Enum.sum()
   end
 
   # --------------------------------------------------
   # Part Two
   # --------------------------------------------------
 
-  def part_two (_input) do
-    :ok
+  def part_two (input) do
+    input
+      |> init()
+      |> tick(256)
+      |> Enum.sum()
   end
 
 end
