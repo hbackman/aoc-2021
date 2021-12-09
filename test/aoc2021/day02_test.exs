@@ -7,7 +7,7 @@ defmodule Aoc2021.Day02Test do
   @input [:code.priv_dir(:aoc2021), "day02.txt"]
     |> Path.join()
     |> File.read!()
-    |> String.split("\r\n", trim: true)
+    |> String.split(~r/\R/, trim: true)
 
   describe "part one" do
     assert Day02.part_one(@input) == 1670340

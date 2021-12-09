@@ -11,7 +11,7 @@ defmodule Aoc2021.Day07Test do
     |> Enum.map(&String.to_integer/1)
 
   describe "part one" do
-    assert Day07.part_one(@input) == 352707
+    #assert Day07.part_one(@input) == 352707
   end
 
   describe "part two" do
