@@ -10,7 +10,11 @@ defmodule Aoc2021.Day08Test do
     |> String.split(~r/\R/, trim: true)
 
   describe "part one" do
-    IO.inspect Day08.part_one(@input)
+    assert Day08.part_one(@input) == 365
+  end
+
+  describe "part two" do
+    assert Day08.part_two(@input) == :skip
   end
 
 end
