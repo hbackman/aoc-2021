@@ -7,10 +7,17 @@ defmodule Aoc2021.Day09Test do
   @input [:code.priv_dir(:aoc2021), "day09.txt"]
     |> Path.join()
     |> File.read!()
-    |> String.split(~r/\R/, trim: true)
+    |> String.replace(~r/\R/, "")
+    |> String.split("", trim: true)
+    |> Enum.map(&String.to_integer/1)
+    |> Enum.chunk_every(100)
 
   describe "part one" do
-    IO.inspect Day09.part_one(@input)
+    assert Day09.part_one(@input) == 550
+  end
+
+  describe "part two" do
+    #
   end
 
 end
